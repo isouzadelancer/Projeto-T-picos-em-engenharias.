@@ -1,0 +1,92 @@
+
+Introdução
+
+Este projeto tem como objetivo modelar e simular um canal seletivo em frequência baseado no modelo 3GPP TR 38.901 para frequências entre 0,5 GHz e 100 GHz, considerando especificamente o ambiente urbano microcelular sem linha de visada (UMi NLoS).
+Através da geração de parâmetros estocásticos como atrasos, potências e ângulos de chegada, foram analisadas as características do canal, incluindo o espalhamento de atraso, dispersão angular, dispersão Doppler e propriedades de coerência temporal e espectral. As simulações foram realizadas utilizando as linguagens Python e MATLAB, seguindo as instruções e procedimentos apresentados em sala de aula.
+O relatório está estruturado em tópicos numerados para facilitar o entendimento e a organização dos resultados obtidos.
+
+=== 1a ===
+Geração do espalhamento de atraso στ e atrasos multipercurso τn em Python e MATLAB.
+
+=== 1b ===
+O espalhamento de atraso στ segue distribuição normal na escala logarítmica e log-normal na escala linear.
+
+=== 1c ===
+Gráfico da média e desvio padrão de στ vs frequência (0,5 a 100 GHz).
+
+=== 1d ===
+Com o aumento da frequência, o sinal sofre mais atenuação, resultando em menor dispersão temporal e menor στ.
+
+=== 1e ===
+σT mede a dispersão temporal causada pelo multipercurso. σT maior indica mais distorção do sinal.
+
+=== 1f ===
+Os atrasos τn são modelados por uma distribuição exponencial de média rτ·στ.
+
+=== 2a ===
+Geração dos termos de sombreamento ξn, potências α²n e fator de Rice KR.
+
+=== 2b ===
+Potências decaem exponencialmente com o atraso, representando perda de energia em trajetos mais longos.
+
+=== 2c ===
+O sombreamento ξn modela variações lentas da potência devido a obstáculos.
+
+=== 2d ===
+KR representa a razão entre potência de visada e potência dispersa; segue distribuição normal em dB e log-normal linear.
+
+=== 2e ===
+KR gerado ≈ 0.83, KR calculado ≈ 0.84 — resultados compatíveis.
+
+=== 2f ===
+Gráfico do perfil de atraso de potência.
+
+=== 2g ===
+Espalhamento de atraso recalculado στ ≈ 0.0748 μs.
+
+=== 3a ===
+Geração dos ângulos de chegada θn (azimute) e φn (elevação).
+
+=== 3b ===
+Espalhamentos σθ e σφ indicam a dispersão angular do canal.
+
+=== 3c ===
+Gráfico da dispersão angular da potência.
+
+=== 3d ===
+Vetores de direção rn gerados e plotados em 3D.
+
+=== 4a ===
+Vetores de velocidade v = [5, 0, 0] m/s e [50, 0, 0] m/s.
+
+=== 4b ===
+Cálculo dos desvios Doppler νn.
+
+=== 4c ===
+Gráficos mostram que velocidades maiores causam maior dispersão Doppler.
+
+=== 5a ===
+Geração de três pulsos retangulares.
+
+=== 5b ===
+Sinais recebidos obtidos por convolução com a resposta ao impulso.
+
+=== 5c ===
+Sinais curtos mostram mais distorção por multipercurso.
+
+=== 6a ===
+Função de autocorrelação ρTT(κ;σ) calculada.
+
+=== 6b ===
+Banda de coerência estimada em ≈ 5.0 MHz.
+
+=== 6c ===
+Tempo de coerência:
+- 5 m/s: Tc ≈ 1.44 ms (0.95), 2.04 ms (0.90)
+- 50 m/s: Tc ≈ 0.15 ms (0.95), 0.21 ms (0.90)
+
+Conclusão
+
+A simulação realizada permitiu caracterizar de forma precisa as propriedades estatísticas do canal UMi NLoS, reproduzindo fenômenos como a dispersão de atraso, variação angular e dispersão Doppler de forma consistente com o modelo 3GPP TR 38.901.
+Verificou-se que o aumento da frequência reduz o espalhamento de atraso e a mobilidade do receptor impacta significativamente o tempo de coerência do canal.
+O conjunto de códigos e gráficos gerados está de acordo com os requisitos do projeto e fornece uma base sólida para futuras análises de canais de comunicação sem fio.
