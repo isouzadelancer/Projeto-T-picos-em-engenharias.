@@ -1,6 +1,6 @@
 rng(42);
 fc = 3.5e9;
-c = 3e8; % Velocidade da luz
+c = 3e8; 
 lambda_c = c / fc;
 num_samples = 10000; 
 
